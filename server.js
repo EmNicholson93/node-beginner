@@ -1,14 +1,12 @@
-var http = require("http");
-database.query("SELECT * from hugetable", functions(rows) {
-    var: result = rows
-});
-
-console.log("hello world");
+var foo = require("http");
 
 function onRequest(request, response) { 
+    console.log("Request received");
     response.writeHead(200, {"Content-Type": "text/plain"}); 
     response.write("Hello world");
-response.end();
+    response.end();
 }
 
-http,createServer(onRequest).listen(8888);
+hfoo.createServer(onRequest).listen(8888);
+
+console.log("server has started");
