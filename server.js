@@ -1,19 +1,9 @@
 var http = require("http");
 
-function say(word) {
-    console.log(say);
-    }
-    
-    function execute(someFunction, value) {
-        someFunction(value);
-    }
-    
-    execute(function(word){ console.log(word) }, "Hello");
-    
-http.createServer(function(request, response) { 
+function onRequest(request, response) { 
     response.writeHead(200, {"Content-Type": "text/plain"}); 
-    response.write(function say(word) {
-        consol.log(word);
-    });
+    response.write("Hello world");
 response.end();
-}).listen(8888);
+}
+
+http,createServer(onRequest).listen(8888);
