@@ -1,4 +1,4 @@
-var foo = require("http");
+var http = require("http");
 var url = require("url");
 
 function start(route, handle) {
@@ -6,14 +6,13 @@ function start(route, handle) {
         var pathname = url.parse(request.url).pathname;
         console.log("Request for " + pathname + " received.");
 
-        route(handle, pathname);
-
         response.writeHead(200, {"Content-Type": "text/plain"}); 
-        response.write("Hello world");
+        var content = route(handle, pathname);
+        response.write(content);
         response.end();
     }
     
-    foo.createServer(onRequest).listen(8888);
+    http.createServer(onRequest).listen(8888);
     console.log("server has started");
 }
 
