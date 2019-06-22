@@ -8,7 +8,7 @@ function say(word) {
         someFunction(value);
     }
     
-    execute(say, "Hello");
+    execute(function(word){ console.log(word) }, "Hello");
     
 http.createServer(function(request, response) { 
     response.writeHead(200, {"Content-Type": "text/plain"}); 
